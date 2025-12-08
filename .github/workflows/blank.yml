@@ -29,15 +29,15 @@ concurrency:
   
 jobs:
   msw-msvs:
-    runs-on: windows-2022
+    runs-on: ubuntu
     name: wxMSW
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - configuration: 'Release'
-            platform: 'x64'
-            vsversion: 2022
+      # matrix:
+      #   include:
+      #     - configuration: 'Release'
+      #       platform: 'x64'
+      #       vsversion: 2022
     steps:
 
       - name: Setup SSH
