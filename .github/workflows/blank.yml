@@ -139,7 +139,7 @@ jobs:
           # git clone https://oauth2:${{ secrets.GITEE_TOKEN }}@gitee.com/charlesabc/quick-print.git 
           cd myutils
           cd web_certs_check
-          sh check_certs_expire_all.sh
+          bash check_certs_expire_all.sh
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
