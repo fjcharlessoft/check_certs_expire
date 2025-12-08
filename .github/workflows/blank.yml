@@ -94,8 +94,8 @@ jobs:
         run: |
           pip install dding
           mkdir -p ~/.dding
-          dding_secret="${{ github.event.client_payload.dding_secret || env.DEFAULT_DDING_SECRET }}"
-          dding_token="${{ github.event.client_payload.dding_token || env.DEFAULT_DDING_TOKEN }}"
+          dding_secret="${{ github.event.client_payload.secret || env.DEFAULT_DDING_SECRET }}"
+          dding_token="${{ github.event.client_payload.token || env.DEFAULT_DDING_TOKEN }}"
           cat <<EOF > ~/.dding/config.json
           [
               {
@@ -112,8 +112,8 @@ jobs:
         run: |
           pip install dding
           New-Item -Path $HOME\.dding -ItemType Directory -Force
-          $dding_secret = "${{ github.event.client_payload.dding_secret || env.DEFAULT_DDING_SECRET }}"
-          $dding_token = "${{ github.event.client_payload.dding_token || env.DEFAULT_DDING_TOKEN }}"
+          $dding_secret = "${{ github.event.client_payload.secret || env.DEFAULT_DDING_SECRET }}"
+          $dding_token = "${{ github.event.client_payload.token || env.DEFAULT_DDING_TOKEN }}"
           $config = @"
           [
               {
