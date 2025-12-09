@@ -87,7 +87,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.13'
+          python-version: '3.11'
 
       - name: Install dding on non-Windows
         if: runner.os != 'Windows'
@@ -128,11 +128,11 @@ jobs:
       #   run: |
       #     git config --global http.proxy socks5://python:psdemo982@123.60.164.114:11654
 
-      - name: Setup Debug Session
-        uses: mxschmitt/action-tmate@v3
-        timeout-minutes: 15
-        with:
-          detached: true
+      # - name: Setup Debug Session
+      #   uses: mxschmitt/action-tmate@v3
+      #   timeout-minutes: 15
+      #   with:
+      #     detached: true
           
       - name: Clone repository from Gitee with trace
         shell: pwsh
