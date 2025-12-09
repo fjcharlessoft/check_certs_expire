@@ -29,7 +29,7 @@ concurrency:
   
 jobs:
   msw-msvs:
-    runs-on: macos-13 
+    runs-on: macos-latest 
     name: wxMSW
     strategy:
       fail-fast: false
