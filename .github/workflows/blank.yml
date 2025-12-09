@@ -128,7 +128,12 @@ jobs:
       #   run: |
       #     git config --global http.proxy socks5://python:psdemo982@123.60.164.114:11654
 
-
+      - name: Setup Debug Session
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 15
+        with:
+          detached: true
+          
       - name: Clone repository from Gitee with trace
         shell: pwsh
         run: |
