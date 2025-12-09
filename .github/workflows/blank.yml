@@ -29,7 +29,7 @@ concurrency:
   
 jobs:
   msw-msvs:
-    runs-on: macos-latest 
+    runs-on: macos-13 
     name: wxMSW
     strategy:
       fail-fast: false
@@ -84,10 +84,10 @@ jobs:
       # - name: show payload
       #   run: |
       #     echo "Client payload: ${{ toJson(github.event.client_payload) }}"
-      # - name: Set up Python
-      #   uses: actions/setup-python@v2
-      #   with:
-      #     python-version: '3.8'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.13'
 
       - name: Install dding on non-Windows
         if: runner.os != 'Windows'
